@@ -41,7 +41,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["OM"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('Send TXT file for download')
+    editable = await m.reply_text('Send TXT file for download/n cancel - Press /stop')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
