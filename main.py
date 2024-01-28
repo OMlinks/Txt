@@ -29,7 +29,7 @@ bot = Client("bot",
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /tuktuk")
+    editable = await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /OM")
 
 
 @bot.on_message(filters.command("stop"))
@@ -39,7 +39,7 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["tuktuk"]))
+@bot.on_message(filters.command(["OM"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('Send TXT file for download')
     input: Message = await bot.listen(editable.chat.id)
