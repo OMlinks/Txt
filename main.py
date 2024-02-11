@@ -16,7 +16,7 @@ import helper
 from logger import logging
 import time
 import asyncio
-from pyrogram.types import User, Message
+from pyrogram.types import User, Message, AUTH_USERS
 import sys
 import re
 import os
@@ -39,7 +39,7 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["OM"]))
+@bot.on_message(filters.command(["OM"] & filters.user(AUTH_USERS))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('Send TXT file for download\n cancel - Press /stop')
     input: Message = await bot.listen(editable.chat.id)
