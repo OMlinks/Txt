@@ -13,3 +13,4 @@ class Config(object):
     API_HASH = os.environ["API_HASH", "51eb315488b86948fcce55738e6b5ffb"]
     AUTH_USERS = "6585878012"""
 
+    AUTH_USERS = os.environ.get('AUTH_USERS', "6585878012")
